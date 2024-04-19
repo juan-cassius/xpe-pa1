@@ -1,6 +1,6 @@
 import { Button, IconButton, InputAdornment, TextField } from '@mui/material'
-import medcloudLink from '../../assets/medcloud-login.png'
 import './LoginForm.css'
+import porquinho from '../../assets/porquinho.png'
 import { useEffect, useState } from 'react'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
 import { useUser } from '../../hooks/useUser'
@@ -17,13 +17,13 @@ function LoginForm() {
         setFormData({ ...formData, [name]: value })
     }
 
-    useEffect(() => {  
+    useEffect(() => {
         console.log(formData);
     }, [formData]);
 
-        
 
-    const handleSubmit = async  (event: React.FormEvent<HTMLFormElement>) => {
+
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
 
         const { email, password } = formData
@@ -37,24 +37,24 @@ function LoginForm() {
             })
             return
         }
-            const loginResponse = await login(formData)
-            if ('token' in loginResponse && 'user' in loginResponse) {
-                Swal.fire({
-                    title: "Login realizado com sucesso!",
-                    icon: "success",
-                    showConfirmButton: false,
-                    timer: 1500,
-                }).then(() => {
-                    window.location.href = '/'
-                })
-            } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Email ou senha incorretos!',
-                    timer: 1500,
-                })
-            }
+        const loginResponse = await login(formData)
+        if ('token' in loginResponse && 'user' in loginResponse) {
+            Swal.fire({
+                title: "Login realizado com sucesso!",
+                icon: "success",
+                showConfirmButton: false,
+                timer: 1500,
+            }).then(() => {
+                window.location.href = '/'
+            })
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Email ou senha incorretos!',
+                timer: 1500,
+            })
+        }
     }
 
     const [showPassword, setShowPassword] = useState(false)
@@ -66,7 +66,7 @@ function LoginForm() {
             <form
                 onSubmit={handleSubmit}
             >
-                <img src={medcloudLink} alt="Medcloud" className='medcloud-logo' />
+                <img src={porquinho} alt="Porco" className='pa-logo' />
                 <TextField
                     className='form-input'
                     fullWidth
@@ -76,6 +76,8 @@ function LoginForm() {
                     required
                     type="email"
                     variant="outlined"
+                    color='success'
+                    margin='normal'
                 />
                 <TextField
                     className='form-input'
@@ -99,16 +101,42 @@ function LoginForm() {
                     required
                     type={showPassword ? 'text' : 'password'}
                     variant="outlined"
+                    color='success'
+                    margin='normal'
                 />
                 <Button
                     className='form-button'
-                    style={{ background: '#009adf', marginBottom: '10px' }}
+                    style={{
+                        marginBottom: '10px',
+                        backgroundColor: 'green',
+                    }}
                     type="submit"
                     variant="contained"
                 >
                     Login
                 </Button>
-
+                <div
+                    className='form-buttons-div'
+                >
+                    <Button
+                        className='form-button'
+                        style={{
+                            backgroundColor: 'green',
+                        }}
+                        type="submit"
+                        variant="contained"
+                        onClick={() => window.location.href = '/register'}
+                    />
+                    <Button
+                        className='form-button'
+                        style={{
+                            backgroundColor: 'green',
+                        }}
+                        type="submit"
+                        variant="contained"
+                        onClick={() => window.location.href = '/register'}
+                    />
+                </div>
             </form>
         </div>
     )
