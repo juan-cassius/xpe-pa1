@@ -126,6 +126,7 @@ function LoginForm() {
                     className='form-button'
                     style={{
                         marginBottom: '10px',
+                        marginRight: '16px',
                         backgroundColor: 'green',
                     }}
                     type="submit"
@@ -151,6 +152,7 @@ function LoginForm() {
                         className='form-button'
                         style={{
                             backgroundColor: 'green',
+                            marginRight: '16px',
                         }}
                         type="submit"
                         variant="contained"
