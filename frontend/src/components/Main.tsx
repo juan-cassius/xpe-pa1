@@ -1,15 +1,17 @@
-import React from 'react';
-import user from '../assets/user.svg';
-import moeda from '../assets/moeda.svg';
-import home from '../assets/home.svg';
-import cards from '../assets/cards.svg';
-import rank from '../assets/rank.svg';
-import medalha from '../assets/medalha.svg';
-import construction from '../assets/construction.png';
+// import React from 'react';
+// import user from '../assets/user.svg';
+// import moeda from '../assets/moeda.svg';
+// import home from '../assets/home.svg';
+// import cards from '../assets/cards.svg';
+// import rank from '../assets/rank.svg';
+// import medalha from '../assets/medalha.svg';
+// import construction from '../assets/construction.png';
+import mapa from '../assets/mapa.png';
 
 export default function Main() {
   return (
     <>
+      {/* O código abaixo é um protótipo de como a tela principal do aplicativo deve ser.
       <img
         src={construction}
         style={{
@@ -70,8 +72,11 @@ export default function Main() {
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-around',
-            marginTop: '50px',
-
+            marginTop: '70px',
+            backgroundColor: 'lightgray',
+            padding: '15px',
+            borderRadius: '25px',
+            
           }}
         >
           <img src={home}
@@ -87,7 +92,20 @@ export default function Main() {
             style={{ width: '30px', height: '30px' }}
           />
         </div>
-      </div>
+      </div> */}
+    <img
+      src={mapa}
+      style={{
+        width: '100%',
+        height: '100%',
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        zIndex: '-1',
+      
+      }}
+    >
+    </img>
     </>
 
   );
