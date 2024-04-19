@@ -57,6 +57,24 @@ function LoginForm() {
         }
     }
 
+    const register = () => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Em construção!',
+            text: 'A fazer!',
+            timer: 1500,
+        })
+    }
+
+    const forgotPassword = () => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Em construção!',
+            text: 'A fazer!',
+            timer: 1500,
+        })
+    }
+
     const [showPassword, setShowPassword] = useState(false)
     const handleClickShowPassword = () => setShowPassword(!showPassword)
     const handleMouseDownPassword = () => setShowPassword(!showPassword)
@@ -125,8 +143,10 @@ function LoginForm() {
                         }}
                         type="submit"
                         variant="contained"
-                        onClick={() => window.location.href = '/register'}
-                    />
+                        onClick={() => register()}
+                    >
+                        Registrar
+                    </Button>
                     <Button
                         className='form-button'
                         style={{
@@ -134,8 +154,10 @@ function LoginForm() {
                         }}
                         type="submit"
                         variant="contained"
-                        onClick={() => window.location.href = '/register'}
-                    />
+                        onClick={() => forgotPassword()}
+                    >
+                        Esqueci a senha
+                    </Button>
                 </div>
             </form>
         </div>
